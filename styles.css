@@ -146,3 +146,160 @@ footer {
     text-decoration: none;
     margin: 0 5px;
 }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif; /* Updated font family */
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+nav {
+    background: #333;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.centered-content {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.slogan {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.explore-button {
+    background: #dd9d69;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Gallery Section */
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 0;
+}
+
+.gallery-item {
+    min-width: 250px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.order-button {
+    background: #dd9d69;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Section Content */
+.section-content {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section-content h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #dd9d69;
+    text-decoration: none;
+    margin: 0 5px;
+}
