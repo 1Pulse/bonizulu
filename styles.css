@@ -11,7 +11,7 @@ body {
 
 /* Navigation Bar */
 nav {
-    background: #333;
+    background: #834014e8;
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -130,7 +130,7 @@ nav {
 
 /* Footer */
 footer {
-    background: #333;
+    background: #834014e8;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -161,7 +161,7 @@ body {
 
 /* Navigation Bar */
 nav {
-    background: #333;
+    background: #0a0a14e8;
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -287,7 +287,7 @@ nav {
 
 /* Footer */
 footer {
-    background: #333;
+    background: #0a0a14e8;
     color: #fff;
     text-align: center;
     padding: 20px;
