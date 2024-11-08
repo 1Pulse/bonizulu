@@ -6,9 +6,9 @@ document.querySelectorAll('nav a').forEach(anchor => {
         });
     });
 });
-
 function orderItem(imageUrl) {
-    const message = `May I enquire about this range? Check out the image: ${window.location.origin}/${imageUrl}`;
+    const message = `May I enquire about this range? Check out the image: ${window.location.origin}/https://bonizulu.co.za/Hero.jpeg`;
+
     const whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
 }
