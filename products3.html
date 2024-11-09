@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="BoniZulu - A Woman-Centric Fashion Brand Empowering Women. Discover Fashion, Lifestyle, and Natural Health Products Made by Women, for Women.">
+        <meta name="keywords" content="BoniZulu, Women's Fashion, Empowering Women, Natural Health Products, South African Fashion, Inclusive Fashion, Lifestyle, Women's Community">
+        <meta name="author" content="BoniZulu">
+        <title>BoniZulu - Fashion for Women, by Women</title>
+        <link rel="icon" href="bonizluu-fav.png" type="image/x-icon"> <!-- Favicon -->
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"> <!-- Playfair Display Font -->
+ 
+
+
+             <!-- Open Graph Meta Tags -->
+             <meta property="og:title" content="BoniZulu - Fashion for Women, by Women">
+             <meta property="og:description" content="BoniZulu - A Woman-Centric Fashion Brand Empowering Women. Discover Fashion, Lifestyle, and Natural Health Products Made by Women, for Women.">
+             <meta property="og:image" content="https://bonizulu.co.za/Hero.jpeg">
+             <meta property="og:url" content="https://bonizulu.co.za">
+             <meta property="og:type" content="website">
+             <meta property="og:site_name" content="BoniZulu">
+         
+    
+</head>
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.product-container {
+    width: 90%;
+    margin: auto;
+}
+
+.main-image-slider {
+    position: relative;
+    text-align: center;
+}
+
+.main-image-slider img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-btn.left {
+    left: 10px;
+}
+
+.nav-btn.right {
+    right: 10px;
+}
+
+.related-products {
+    margin-top: 20px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.carousel-item img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+    </style>
+
+<div class="product-container">
+    <!-- Large Product Image with Swiping -->
+    <div class="main-image-slider">
+        <button class="nav-btn left" onclick="prevImage()">&#10094;</button>
+           <!-- Main Image and Description -->
+           <div class="image-and-details">
+            <img id="mainImage" src="seated.jpeg" alt="Product Image">
+            <div class="image-description">
+                <p id="imageDescription">Brand statement pieces for bonis</p>
+                <p id="productPrice">R1 299.99</p>
+                
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button onclick="orderNow()">
+                        <img src="icons/order-icon.png" alt="Order Now" title="Order Now">
+                    </button>
+                    <button onclick="addToWishlist()">
+                        <img src="icons/wishlist-icon.png" alt="Add to Wishlist" title="Add to Wishlist">
+                    </button>
+                    <button onclick="addToCart()">
+                        <img src="icons/cart-icon.png" alt="Add to Cart" title="Add to Cart">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button class="nav-btn right" onclick="nextImage()">&#10095;</button>
+    </div>
+
+       
+     
+    
+    <!-- Carousel of Other Products -->
+    <div class="related-products">
+        <h3>Other Products</h3>
+        <div class="carousel">
+            <div class="carousel-item" onclick="goToProductPage('product2.html')">
+                <img src="outfit.jpeg" alt="Girl on stairs">
+                <p>Product 2</p>
+            </div>
+            <div class="carousel-item" onclick="goToProductPage('product3.html')">
+                <img src="grand.jpeg" alt="Product 3">
+                <p>Product 3</p>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // Array of product images
+const productImages = [
+    'seated.jpeg',
+    'stairs.jpeg',
+    'girls.jpeg',
+    'grand.jpeg'
+];
+
+let currentImageIndex = 0;
+
+// Function to display the current image based on the index
+function showImage(index) {
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = productImages[index];
+}
+
+// Function to go to the next image in a loop
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % productImages.length; // Loop forward
+    showImage(currentImageIndex);
+}
+
+// Function to go to the previous image in a loop
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + productImages.length) % productImages.length; // Loop backward
+    showImage(currentImageIndex);
+}
+
+// Initial display of the first image
+showImage(currentImageIndex);
+
+</script>
+</body>
+</html>
+
+
