@@ -22,8 +22,7 @@
     <meta property="og:url" content="https://bonizulu.co.za">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="BoniZulu">
-</head>
-<body>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,10 +30,12 @@
         .product-container {
             width: 90%;
             margin: auto;
+            text-align: center;
         }
         .main-image-slider {
             position: relative;
             text-align: center;
+            margin-bottom: 20px;
         }
         .main-image-slider img {
             width: 100%;
@@ -65,16 +66,58 @@
             border: none;
             padding: 12px 24px;
             cursor: pointer;
-            display: block;
-            margin: 20px auto;
-            text-align: center;
+            display: inline-block;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 15px;
         }
         .buy-now-btn:hover {
             background-color: #e04e2a;
         }
+
+        /* Related Products Styling */
+        .related-products {
+            margin-top: 40px;
+            padding: 20px 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+        .related-products h3 {
+            margin-bottom: 15px;
+        }
+        .carousel {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px 0;
+            flex-wrap: wrap;
+        }
+        .carousel-item {
+            flex: 0 0 150px;
+            text-align: center;
+            cursor: pointer;
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        .carousel-item:hover {
+            transform: scale(1.05);
+        }
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .carousel-item a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            margin-top: 5px;
+        }
     </style>
+</head>
+<body>
 
     <!-- Navigation Bar -->
     <nav>
@@ -90,38 +133,40 @@
         <!-- Large Product Image with Swiping -->
         <div class="main-image-slider">
             <button class="nav-btn left" onclick="prevImage()">&#10094;</button>
-            <!-- Main Image and Description -->
-            <div class="image-and-details">
-                <img id="mainImage" src="seated.jpeg" alt="Product Image">
-                <div class="image-description">
-                    <p id="imageDescription">Brand statement pieces for BoniZulu</p>
-                    <p id="productPrice">R1 299.99</p>
-
-                    <!-- Buy Now Button -->
-                    <a class="buy-now-btn" href="https://wa.me/+27615375404?text=I%20would%20like%20to%20place%20this%20order%20https://bonizulu.co.za/products.html" target="_blank">
-                        Buy Now
-                    </a>
-                </div>
-            </div>
+            <img id="mainImage" src="seated.jpeg" alt="Product Image">
             <button class="nav-btn right" onclick="nextImage()">&#10095;</button>
         </div>
 
-        <!-- Carousel of Other Products -->
-        <div class="related-products">
-            <h3>Other Products</h3>
-            <div class="carousel">
-                <div class="carousel-item" onclick="goToProductPage('product2.html')">
-                    <img src="outfit.jpeg" alt="Girl on stairs">
+        <p id="imageDescription">Brand statement pieces for BoniZulu</p>
+        <p id="productPrice">R1 299.99</p>
+
+        <!-- Buy Now Button -->
+        <a class="buy-now-btn" href="https://wa.me/+27615375404?text=I%20would%20like%20to%20place%20this%20order%20https://bonizulu.co.za/products.html" target="_blank">
+            Buy Now
+        </a>
+    </div>
+
+    <!-- Related Products Section -->
+    <div class="related-products">
+        <h3>Other Products</h3>
+        <div class="carousel">
+            <div class="carousel-item">
+                <a href="product2.html">
+                    <img src="outfit.jpeg" alt="Product 2">
                     <p>Product 2</p>
-                </div>
-                <div class="carousel-item" onclick="goToProductPage('product3.html')">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="product3.html">
                     <img src="grand.jpeg" alt="Product 3">
                     <p>Product 3</p>
-                </div>
-                <div class="carousel-item" onclick="goToProductPage('product4.html')">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="product4.html">
                     <img src="mens-side.png" alt="Product 4">
                     <p>Product 4</p>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -139,8 +184,7 @@
 
         // Function to display the current image based on the index
         function showImage(index) {
-            const mainImage = document.getElementById('mainImage');
-            mainImage.src = productImages[index];
+            document.getElementById('mainImage').src = productImages[index];
         }
 
         // Function to go to the next image in a loop
